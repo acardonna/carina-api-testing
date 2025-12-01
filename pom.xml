@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.solvd</groupId>
+  <artifactId>carina-api-testing</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <name>carina-api-testing</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>21</maven.compiler.release>
+    <maven.surefire.plugin.version>3.5.4</maven.surefire.plugin.version>
+    <maven.compiler.plugin.version>3.14.1</maven.compiler.plugin.version>
+    <rest.assured.version>4.3.0</rest.assured.version>
+    <carina.api.version>1.2.4</carina.api.version>
+    <carina.core.version>1.3.0</carina.core.version>
+    <suiteXmlFile>src/test/resources/suites/testng.xml</suiteXmlFile>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.zebrunner</groupId>
+      <artifactId>carina-core</artifactId>
+      <version>${carina.core.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.zebrunner</groupId>
+      <artifactId>carina-api</artifactId>
+      <version>${carina.api.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>rest-assured</artifactId>
+      <version>${rest.assured.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${maven.surefire.plugin.version}</version>
+        <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven.compiler.plugin.version}</version>
+        <configuration>
+          <release>${maven.compiler.release}</release>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <profile>
+      <id>carina</id>
+      <properties>
+        <suiteXmlFile>src/test/resources/suites/testng-carina.xml</suiteXmlFile>
+      </properties>
+    </profile>
+    <profile>
+      <id>restassured</id>
+      <properties>
+        <suiteXmlFile>src/test/resources/suites/testng-restassured.xml</suiteXmlFile>
+      </properties>
+    </profile>
+  </profiles>
+</project>
