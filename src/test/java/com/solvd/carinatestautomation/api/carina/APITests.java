@@ -1,4 +1,4 @@
-package com.solvd.carinatestautomation;
+package com.solvd.carinatestautomation.api.carina;
 
 import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.testng.annotations.Test;

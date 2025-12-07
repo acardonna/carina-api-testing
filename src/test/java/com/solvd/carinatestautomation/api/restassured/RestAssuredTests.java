@@ -1,4 +1,4 @@
-package com.solvd.carinatestautomation;
+package com.solvd.carinatestautomation.api.restassured;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;

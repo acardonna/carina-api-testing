@@ -1,4 +1,4 @@
-package com.solvd.carinatestautomation;
+package com.solvd.carinatestautomation.web;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;

@@ -2,7 +2,7 @@
 <suite name="Rest Assured Suite" verbose="1" thread-count="1">
     <test name="Rest Assured Tests">
         <classes>
-            <class name="com.solvd.carinatestautomation.RestAssuredTests" />
+            <class name="com.solvd.carinatestautomation.api.restassured.RestAssuredTests" />
         </classes>
     </test>
 </suite>

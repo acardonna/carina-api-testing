@@ -87,5 +87,11 @@
         <suiteXmlFile>src/test/resources/suites/testng-web.xml</suiteXmlFile>
       </properties>
     </profile>
+    <profile>
+      <id>android</id>
+      <properties>
+        <suiteXmlFile>src/test/resources/suites/testng-android.xml</suiteXmlFile>
+      </properties>
+    </profile>
   </profiles>
 </project>

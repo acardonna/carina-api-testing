@@ -2,7 +2,7 @@
 <suite name="Web Tests Suite" verbose="1" thread-count="1">
   <test name="Coffee Cart Web Tests">
     <classes>
-      <class name="com.solvd.carinatestautomation.WebTests" />
+      <class name="com.solvd.carinatestautomation.web.WebTests" />
     </classes>
   </test>
 </suite>
